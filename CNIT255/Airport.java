@@ -10,14 +10,13 @@ public class Airport {
     private String Code;
     private String Airlines;
 
-    public Airport(String Country, String City, String Flights, String Airlines, String Code) {
+    public Airport(String Country, String City, String Code) {
         
         // Setters being declared for the attribute
 
         setCountry(Country);
         setCity(City);
         setCode(Code);
-        setAirlines(Airlines);
     }
 
     
@@ -36,10 +35,6 @@ public class Airport {
     }
 
 
-    public void setAirlines(String Airlines) {
-        this.Airlines = Airlines;
-    }
-
 
     // Create getter methods for the class
 
@@ -53,10 +48,6 @@ public class Airport {
 
     public String getCode() {
         return Code;
-    }
-
-    public String getAirlines() {
-        return Airlines;
     }
 
 }
