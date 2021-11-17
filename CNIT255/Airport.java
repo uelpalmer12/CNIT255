@@ -7,6 +7,7 @@ public class Airport {
 
     private String Country;
     private String City;
+    private String Code;
     private String Flights;
     private String Airlines;
 
@@ -16,6 +17,7 @@ public class Airport {
 
         setCountry(Country);
         setCity(City);
+        setCode(Code);
         setFlights(Flights);
         setAirlines(Airlines);
     }
@@ -29,6 +31,10 @@ public class Airport {
 
     public void setCity(String City) {
         this.City = City;
+    }
+
+    public void setCode(String Code) {
+        this.Code = Code;
     }
 
     public void setFlights(String Flights) {
@@ -50,6 +56,10 @@ public class Airport {
         return City;
     }
 
+    public String getCode() {
+        return Code;
+    }
+
     public String getFlights() {
         return Flights;
     }
@@ -59,3 +69,4 @@ public class Airport {
     }
 
 }
+
