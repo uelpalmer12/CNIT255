@@ -8,7 +8,6 @@ public class Airport {
     private String Country;
     private String City;
     private String Code;
-    private String Airlines;
 
     public Airport(String Country, String City, String Code) {
         
