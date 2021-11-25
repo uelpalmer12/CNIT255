@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Flight {
 
     private ArrayList<Passenger> PassengerList = new ArrayList<>();
-    private Flight[] flights;
+    private static Flight[] flights;
 
     public void FlightTest(){
         flights = new Flight[0];
@@ -91,6 +91,7 @@ public class Flight {
     }
 
 
+
     public Passenger[] getPassengersFor(String FlightNumber){
         ArrayList<Passenger> passengerInFlight = new ArrayList<>();
         for (Passenger passenger : PassengerList){
@@ -109,4 +110,6 @@ public class Flight {
         }
         return finalPassengerList;
     }
+
+
 }
