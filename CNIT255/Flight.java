@@ -1,15 +1,9 @@
 package CNIT255;
 
-import java.util.ArrayList;
+
 
 public class Flight {
 
-    private ArrayList<Passenger> PassengerList = new ArrayList<>();
-    private static Flight[] flights;
-
-    public void FlightTest(){
-        flights = new Flight[0];
-    }
 
     // Additional attributes needed for this class
 
@@ -63,53 +57,7 @@ public class Flight {
         return FlightNumber;
     }
 
-    public void addFlight(Flight f){
 
-        Flight newArray[] = new Flight[flights.length+1];
-        for (int i = 0; i < flights.length; i+=1){
-            newArray[i] = flights[i];
-        }
-
-        newArray[newArray.length-1] = f;
-        flights = newArray;
-    }
-
-
-    public Flight getFlightbyFlightNumber(String FlightNumber){
-
-        for (int i = 0; i < flights.length; i+=1){
-            if (flights[i].getFlightNumber() == FlightNumber){
-                return flights[i];
-            }
-        }
-        return null;
-    }
-
-
-    public void addPassengerToFlight(Passenger p){
-        PassengerList.add(p);
-    }
-
-
-
-    public Passenger[] getPassengersFor(String FlightNumber){
-        ArrayList<Passenger> passengerInFlight = new ArrayList<>();
-        for (Passenger passenger : PassengerList){
-            if(passenger.getFlightNumber() == FlightNumber){
-            passengerInFlight.add(passenger);
-            continue;
-            }
-            else{
-                continue;
-            }
-        }
-
-        Passenger[] finalPassengerList = new Passenger[passengerInFlight.size()];
-        for(int i = 0; i < passengerInFlight.size(); i+=1){
-            finalPassengerList[i] = passengerInFlight.get(i);
-        }
-        return finalPassengerList;
-    }
 
 
 }

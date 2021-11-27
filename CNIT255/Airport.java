@@ -16,9 +16,7 @@ public class Airport {
         setCountry(Country);
         setCity(City);
         setCode(Code);
-        this.Country = Country;
-        this.City = City;
-        this.Code = Code;
+
     }
 
     
