@@ -6,7 +6,7 @@ public class Driver {
 
     public static void addPassengerTo(server s) {
         s.addPassenger(new Passenger("Mavie", "Kouame", "Something", "Ivorian", "18F", 32.0, "AF108"));
-        s.addPassenger(new Passenger("Uel", "Kouame", "18AR52266", "Ivoirian", "18F", 18.0, "DEL101"));
+        s.addPassenger(new Passenger("Uel", "Kouame", "18AR52266", "Ivoirian", "18F", 18.0, "AF108"));
 
         /// Tanzim code
         s.addPassenger(new Passenger("Tanzim", "Mubarrat", "Dunno", "Bangladeshi", "29E", 18.0, "DEL101"));
@@ -53,6 +53,8 @@ public class Driver {
         if (a == null || p == null || fa == null) {
             System.out.println("No passenger, pilot or flight attendant registered to the flight " + FlightNumber);
         }
+
+ 
 
 
         //System.out.println("Showing the list of people assigned to " + FlightNumber + ": ");
@@ -147,7 +149,7 @@ public class Driver {
                     System.out.println(a[i].getFlightNumber() + " from " + a[i].getOrigin() + " to " + a[i].getDestination() + ", Duration: " + a[i].getDuration() + " hrs");
                     /// You can also print all other attributes of the flights
                 }
-                break;
+                continue;
                 //// Tanzim code
                 
                 
@@ -168,29 +170,6 @@ public class Driver {
             }
 
         }
-
-        /* server s = new server();
-        addPassengerTo(s);
-
-        while(true){
-            System.out.println("Type 'quit' to exit, anything else to keep going: ");
-            if("quit".equals(scan.nextLine()));
-            {
-                break;
-            }
-
-            System.out.println("Enter the flight number to add passenger or -1 to see current passenger: ");
-            String FlightNumber = scan.nextLine();
-            if (FlightNumber.equals("-1")){
-                printPassenger(scan, s);
-                continue;
-            }
-            Passenger pass = s.getPassengerByFlightNumber(FlightNumber);
-            if (pass == null){
-                System.out.println("Passenger");
-            }
-        }
-         */
     }
 
 }
