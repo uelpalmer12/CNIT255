@@ -6,9 +6,10 @@ public class Passenger extends CNIT255.People{
     // additional attributes needed for the class
 
     private String SeatNumber;
-    private Float Luggage;
+    private double Luggage;
+    private String FlightNumber;
 
-    public Passenger(String FirstName, String LastName, String PassportNumber, String Nationality, String SeatNumber, Float Luggage) {
+    public Passenger(String FirstName, String LastName, String PassportNumber, String Nationality, String SeatNumber, double Luggage, String FlightNumber) {
         super(FirstName, LastName, PassportNumber, Nationality);
         //TODO Auto-generated constructor stub
         setFirstName(FirstName);
@@ -17,6 +18,7 @@ public class Passenger extends CNIT255.People{
         setPassportNumber(PassportNumber);
         setSeatNumber(SeatNumber);
         setLuggage(Luggage);
+        setFlightNumber(FlightNumber);
     }
     
 // writing the method that are only implemented in this class
@@ -24,16 +26,26 @@ public class Passenger extends CNIT255.People{
         this.SeatNumber = seatNumber;
     }
 
-    public void setLuggage(Float luggage) {
-        this.Luggage = luggage;
+    public void setFlightNumber(String flightNumber) {
+        this.FlightNumber = flightNumber;
+    }
+
+    public void setLuggage(double Luggage) {
+        this.Luggage = Luggage;
     }
 
     public String getSeatNumber() {
         return SeatNumber;
     }
 
-    public Float getLuggage() {
+    public double getLuggage() {
         return Luggage;
     }
+
+    public String getFlightNumber() {
+        return FlightNumber;
+    }
+
+    
     
 }

@@ -5,9 +5,11 @@ public class Pilot extends People {
 
     private String LicenseNumber;
     private String Role;
-    private Float HoursFlown;
+    private double HoursFlown;
+    private String FlightNumber;
+    
 
-    public Pilot(String FirstName, String LastName, String PassportNumber, String Nationality, String LicenseNumber, String Role, Float HoursFlown) {
+    public Pilot(String FirstName, String LastName, String PassportNumber, String Nationality, String LicenseNumber, String Role, double HoursFlown, String FlightNumber) {
         super(FirstName, LastName, PassportNumber, Nationality);
         //TODO Auto-generated constructor stub
 
@@ -19,6 +21,9 @@ public class Pilot extends People {
         setLicenseNumber(LicenseNumber);
         setRole(Role);
         setHoursFlown(HoursFlown);
+        setFlightNumber(FlightNumber);
+
+        
     }
 
 
@@ -32,11 +37,15 @@ public class Pilot extends People {
         this.Role = role;
     }
 
-    public void setHoursFlown(Float hoursFlown) {
-        this.HoursFlown = hoursFlown;
+    public void setHoursFlown(double HoursFlown) {
+        this.HoursFlown = HoursFlown;
     }
 
-    public String LicenseNumber() {
+    public void setFlightNumber(String flightNumber) {
+        this.FlightNumber = flightNumber;
+    }
+
+    public String getLicenseNumber() {
         return LicenseNumber;
     }
 
@@ -44,8 +53,12 @@ public class Pilot extends People {
         return Role;
     }
 
-    public Float getHoursFlown() {
+    public double getHoursFlown() {
         return HoursFlown;
+    }
+
+    public String getFlightNumber() {
+        return FlightNumber;
     }
     
 }

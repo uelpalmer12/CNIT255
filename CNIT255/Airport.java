@@ -16,6 +16,7 @@ public class Airport {
         setCountry(Country);
         setCity(City);
         setCode(Code);
+
     }
 
     

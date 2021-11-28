@@ -7,7 +7,9 @@ public class Terminal {
     private String TerminalNumber;
     private String GateNumber;
 
-    public Terminal() {
+    public Terminal(String TerminalNumber, String GateNumber) {
+        setTerminalNumber(TerminalNumber);
+        setGateNumber(GateNumber);
 
     }
 
