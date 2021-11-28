@@ -9,12 +9,40 @@ import java.util.ArrayList;
 public class server {
     
     private Passenger[] passengers;
+    private Pilot[] pilots;
+    private FlightAttendant[] flightAttendants;
 
     private ArrayList<Flight> flightsList = new ArrayList<>();
 
     public server(){
         passengers = new Passenger[0];
+        flightAttendants = new FlightAttendant[0];
+        pilots = new Pilot[0];
     }
+
+    public void addFlightAttendant(FlightAttendant fa){
+        FlightAttendant newArray[] = new FlightAttendant[flightAttendants.length+1];
+        for (int i = 0; i < flightAttendants.length; i+=1){
+            newArray[i] = flightAttendants[i];
+        }
+
+        newArray[newArray.length-1] = fa;
+        flightAttendants = newArray;
+    }
+
+    public void addPilot(Pilot p){
+
+        Pilot newArray[] = new Pilot[pilots.length+1];
+        for (int i = 0; i < pilots.length; i+=1){
+            newArray[i] = pilots[i];
+        }
+
+        newArray[newArray.length-1] = p;
+        pilots = newArray;
+
+    }
+
+
 
     public void addPassenger(Passenger p){
 
@@ -62,6 +90,43 @@ public class server {
     	}
         return passengerArray;
     }
+
+    public Pilot[] getPilotsFor(String FlightNumber) {
+        ArrayList<Pilot> pilotList = new ArrayList<Pilot>();
+    	for(int i = 0; i < this.pilots.length; i++) {
+    		if(pilots[i].getFlightNumber().equals(FlightNumber)) {
+    			pilotList.add(pilots[i]);
+    		}
+    	}
+    	
+    	Pilot[] pilotArray = new Pilot[pilotList.size()];
+        
+    	for(int i = 0; i < pilotList.size(); i++) {
+    		pilotArray[i] = pilotList.get(i);
+    	}
+        return pilotArray;
+    }
+
+    public FlightAttendant[] getFlightAttendantFor(String FlightNumber) {
+        ArrayList<FlightAttendant> flightattendantList = new ArrayList<FlightAttendant>();
+    	for(int i = 0; i < this.flightAttendants.length; i++) {
+    		if(flightAttendants[i].getFlightNumber().equals(FlightNumber)) {
+    			flightattendantList.add(flightAttendants[i]);
+    		}
+    	}
+    	
+    	FlightAttendant[] flightAttendantArray = new FlightAttendant[flightattendantList.size()];
+        
+    	for(int i = 0; i < flightattendantList.size(); i++) {
+    		flightAttendantArray[i] = flightattendantList.get(i);
+    	}
+        return flightAttendantArray;
+    }
+
+
+
+
+
     
     public Flight[] printFlights()
     {

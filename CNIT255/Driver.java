@@ -8,14 +8,22 @@ public class Driver {
         s.addPassenger(new Passenger("Mavie", "Kouame", "Something", "Ivorian", "18F", 32.0, "AF108"));
         s.addPassenger(new Passenger("Uel", "Kouame", "18AR52266", "Ivoirian", "18F", 18.0, "DEL101"));
 
-        
-        
         /// Tanzim code
         s.addPassenger(new Passenger("Tanzim", "Mubarrat", "Dunno", "Bangladeshi", "29E", 18.0, "DEL101"));
         // Tanzim code
     
     
     
+    }
+
+    public static void addPilotTo(server s){
+        s.addPilot(new Pilot("Richard", "Perignon", "Something", "French", "1890-990-90" , "Main Pilot", 900.0, "AF108"));
+        s.addPilot(new Pilot("Max", "Braus", "Something", "American", "1789-999-05", "Assistant Pilot", 600.0, "AF108"));
+    }
+
+    public static void addFlightAttendantTo(server s){
+        s.addFlightAttendant(new FlightAttendant("Maggie", "Ackerman", "Something", "Canadian", "Steward", "Stew10", "AF108"));
+        s.addFlightAttendant(new FlightAttendant("Dominic", "Braun", "Something", "British", "Steward", "Stew13", "AF108"));
     }
 
     public static void addFlightServer(server s) {
@@ -35,26 +43,46 @@ public class Driver {
         Passenger[] a = s.getPassengersFor(FlightNumber);
         /// Tanzim code
 
+        Pilot[] p = s.getPilotsFor(FlightNumber);
+
+        FlightAttendant [] fa = s.getFlightAttendantFor(FlightNumber);
+
         
         
         
-        if (a == null) {
-            System.out.println("No passennger registered to the flight " + FlightNumber);
+        if (a == null || p == null || fa == null) {
+            System.out.println("No passenger, pilot or flight attendant registered to the flight " + FlightNumber);
         }
+
 
         //System.out.println("Showing the list of people assigned to " + FlightNumber + ": ");
         
         
         
         
-        
+        System.out.println("Showing the list of pilots assigned to " + FlightNumber + ":");
+        System.out.println();
+        for (int i = 0; i < p.length; i += 1){
+            System.out.println(p[i].getFullName() + ", " + p[i].getNationality() + ", " + p[i].getLicenseNumber());
+        }
+        System.out.println();
+
+        System.out.println("Showing the list of flight attendants assigned to " + FlightNumber + ":");
+        System.out.println();
+        for(int i = 0; i < fa.length; i += 1){
+            System.out.println(fa[i].getFullName() + ", " + fa[i].getNationality() + ", " + fa[i].getAttendantID());
+        }
+
+        System.out.println();
         
         //// Tanzim code
-        System.out.println("Showing the list of people assigned to " + FlightNumber + ":");
+        System.out.println("Showing the list of passengers assigned to " + FlightNumber + ":");
+        System.out.println();
         for (int i = 0; i < a.length; i += 1) {
-            System.out.println(a[i].getFirstName() + " " + a[i].getLastName() + ", " + a[i].getNationality() + ", " + a[i].getPassportNumber());
+            System.out.println(a[i].getFullName()+ ", " + a[i].getNationality() + ", " + a[i].getPassportNumber());
             /// You can also print all other attributes of the passengers
         }
+        System.out.println();
         //// tanzim code
         
         
@@ -63,7 +91,7 @@ public class Driver {
         
         
 
-        boolean any = false;
+       // boolean any = false;
 
     }
 
@@ -81,6 +109,8 @@ public class Driver {
 
         server s = new server();
         addPassengerTo(s);
+        addFlightAttendantTo(s);
+        addPilotTo(s);
         
         
         
